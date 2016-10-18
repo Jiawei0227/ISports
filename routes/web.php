@@ -15,11 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/SportsRecord', function () {
-    return 'helloworld';
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/SportsRecord','RecordController@showRecord');
+Route::get('home', 'HomeController@index');
+
+Route::group(['prefix'=>'sports'],function(){
+	Route::get('/','SportsController@index');
+	Route::get('bloodpressure','SportsController@bloodpressure');
+	Route::get('sportsmanagement','SportsController@index');
+});
+
+Route::get('competition','CompetitionController@index');
+Route::get('onlineforum','OnlineForumController@index');

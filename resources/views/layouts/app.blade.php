@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'iSports') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -36,14 +36,17 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'iSports') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li @if (Request::is('home')) class="active" @endif><a href={{ url('/home') }}>Home</a></li>
+                        <li @if (Request::is('sports')) class="active" @endif><a href={{ url('/sports') }}>Sports</a></li>
+                        <li @if (Request::is('competition')) class="active" @endif><a href={{ url('/competition') }}>Competition</a></li>
+                        <li @if (Request::is('onlineforum')) class="active" @endif><a href={{ url('/onlineforum') }}>OnlineForum</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -60,6 +63,25 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+                                        <a href="#">
+                                            User Management
+                                        </a>
+    
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Friends Management
+                                        </a>
+    
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Property Management
+                                        </a>
+    
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -70,6 +92,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
                                 </ul>
                             </li>
                         @endif
@@ -77,7 +100,6 @@
                 </div>
             </div>
         </nav>
-
         @yield('content')
     </div>
 
