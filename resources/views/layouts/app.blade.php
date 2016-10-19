@@ -43,11 +43,28 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li @if (Request::is('home')) class="active" @endif><a href={{ url('/home') }}>Home</a></li>
-                        <li @if (Request::is('sports')) class="active" @endif><a href={{ url('/sports') }}>Sports</a></li>
-                        <li @if (Request::is('competition')) class="active" @endif><a href={{ url('/competition') }}>Competition</a></li>
-                        <li @if (Request::is('onlineforum')) class="active" @endif><a href={{ url('/onlineforum') }}>OnlineForum</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sports<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                     <li><a href="{{ url('/sports/sportsmanagement') }}">Sports Management</a></li>
+                                    <li><a href="{{ url('/sports/bodymanagement') }}">Body Management</a></li>
+                                    <li><a href="{{ url('/sports/sleepanalysis') }}">Sleep Analysis</a></li>
+                                    <li><a href="{{ url('/sports/sportsdata') }}">Sports Data</a></li>
+                                </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Competition<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                     <li><a href="{{ url('/competition/Hippodrome') }}">Hippodrome</a></li>
+                                    <li><a href="{{ url('/competition/mycompetition') }}">My Competition</a></li>
+                                    <li><a href="{{ url('/competition/challenge') }}">Challenge</a></li>
+                                    <li><a href="{{ url('/competition/competition') }}">Competition</a></li>
+                                </ul>
+                        </li>
+                        <li @if (Request::is('onlineforum')) class="active" @endif><a href="{{ url('/onlineforum') }}">Online Forum</a></li>
                     </ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">

@@ -31,8 +31,8 @@ class SportsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function bloodpressure()
+    public function bodymanagement()
     {
-        return view('sports.bloodpressure');
+        return view('sports.bodymanagement');
     }
 }

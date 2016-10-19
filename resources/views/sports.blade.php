@@ -10,24 +10,11 @@
            <li class="active"><a href="#"><i class="fa fa-home"></i>My Sports</a>
                 <ul class="submenu white"><li><a href={{ url('/sports/sportsmanagement') }}>Sports Management</a></li></ul>
            </li>
-            <li><a href="#"><i class="fa fa-user"></i>Body Management</a>
-                <ul class="submenu white">
-                <li><a href="#">Height Weight</a></li>
-                <li><a href={{ url('/sports/bloodpressure') }}>Blood Pressure</a></li>
-                </ul>
+            <li><a href={{ url('/sports/bloodpressure') }}><i class="fa fa-user"></i>Body Management</a>
             </li>
-            <li><a href="#"><i class="fa fa-file-image-o"></i>Sleep State</a>
-                <ul class="submenu white">
-                    <li><a href="#">Sleep Analysis</a></li>
-                </ul>
+            <li><a href="#"><i class="fa fa-file-image-o"></i>Sleep Analysis</a>
             </li>
-            <li><a href="#"><i class="fa fa-suitcase"></i>Sports Data</a>
-                <ul class="submenu white">
-                    <li><a href="#">Walking</a></li>
-                    <li><a href="#">Running</a></li>
-                    <li><a href="#">Biking</a>
-                </ul>
-            </li>
+            <li><a href="#"><i class="fa fa-suitcase"></i>Sports Data</a></li>
            
         </ul>
         </div>
@@ -35,12 +22,9 @@
         <div class="col-md-8">
             <div class="panel panel-default">
                 @yield('sportsmanagement')
-                @yield('heightweight')
                 @yield('bloodpressure')
                 @yield('sleepanalysis')
-                @yield('waiking')
-                @yield('running')
-                @yield('biking')
+                @yield('sportsdata')
             </div>
         </div>
     </div>

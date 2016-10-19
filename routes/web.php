@@ -20,8 +20,7 @@ Auth::routes();
 Route::get('home', 'HomeController@index');
 
 Route::group(['prefix'=>'sports'],function(){
-	Route::get('/','SportsController@index');
-	Route::get('bloodpressure','SportsController@bloodpressure');
+	Route::get('bodymanagement','SportsController@bodymanagement');
 	Route::get('sportsmanagement','SportsController@index');
 });
 
