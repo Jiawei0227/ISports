@@ -11,91 +11,95 @@
     <title>{{ config('app.name', 'iSports') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
-
+<link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/flexy-menu.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- js -->
+<script src="/js/require.min.js" type="text/javascript"></script>
+<script src="/js/config.js" type="text/javascript"></script>
+<script src="/js/lib/jquery-1.11.1.min.js"></script>
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript">
+require(['jquery'],function($){
+        $(".scroll").click(function(event){     
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="/js/lib/flexy-menu.js"></script>
+<script type="text/javascript">
+require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu({speed: 600,type: "horizontal",align: "left"});});
+</script>
+
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'iSports') }}
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sports<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
+<!-- banner -->
+    <div @if (Request::is('home')) class="banner" @else class="banner1" @endif>
+        <div class="container">
+            <div class="banner-navigation">
+                <div class="banner-nav">
+                        <ul class="flexy-menu orange nav1">
+                            <li @if (Request::is('home')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{ url('/home') }}">Home</a></li>
+                            <li @if (Request::is('sports*')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="#">Sports</a>
+                                <ul>
                                      <li><a href="{{ url('/sports/sportsmanagement') }}">Sports Management</a></li>
                                     <li><a href="{{ url('/sports/bodymanagement') }}">Body Management</a></li>
                                     <li><a href="{{ url('/sports/sleepanalysis') }}">Sleep Analysis</a></li>
                                     <li><a href="{{ url('/sports/sportsdata') }}">Sports Data</a></li>
                                 </ul>
-                        </li>
+                            </li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Competition<span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                     <li><a href="{{ url('/competition/Hippodrome') }}">Hippodrome</a></li>
-                                    <li><a href="{{ url('/competition/mycompetition') }}">My Competition</a></li>
-                                    <li><a href="{{ url('/competition/challenge') }}">Challenge</a></li>
-                                    <li><a href="{{ url('/competition/competition') }}">Competition</a></li>
+                            <li @if (Request::is('competition*')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="#">Competition</a>
+                                <ul>
+                                    
+                                    <li><a href="#">Hippodrome</a>
+                                        <ul>
+                                            <li><a href="#">Single Competition</a></li>
+                                            <li><a href="#">Group Competition</a></li>
+                                            <li><a href="#">Target Competition</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Challenge</a></li>
+                                    <li><a href="#">My Competition</a></li>
                                 </ul>
-                        </li>
-                        <li @if (Request::is('onlineforum')) class="active" @endif><a href="{{ url('/onlineforum') }}">Online Forum</a></li>
-                    </ul>
-
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
+                            </li>
+                            <li @if (Request::is('onlineforum')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/onlineforum')}}">OnlineForum</a></li>
+                            <li @if (Request::is('contact')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="contact.html">Contact Us</a></li>
+<!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <li @if (Request::is('profile*')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif>
+                                <a href="#">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
-                                <ul class="dropdown-menu" role="menu">
+                                <ul>
                                     <li>
                                         <a href="#">
                                             User Management
-                                        </a>
-    
+                                        </a>   
                                     </li>
                                     <li>
                                         <a href="#">
                                             Friends Management
-                                        </a>
-    
+                                        </a>   
                                     </li>
                                     <li>
                                         <a href="#">
                                             Property Management
                                         </a>
-    
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -113,14 +117,65 @@
                                 </ul>
                             </li>
                         @endif
-                    </ul>
+                        </ul>                       
+                    <div class="clearfix"> </div>
                 </div>
             </div>
-        </nav>
+            <div class="logo">
+                <a href="{{ url('/home') }}"><img src="/images/logo.png" alt=" " /></a>
+            </div>
+        </div>
+    </div>
+<!-- //banner -->
         @yield('content')
+
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-grids">
+                <div class="col-md-4 footer-grid">
+                    <h3>Competition</h3>
+                    <ul>
+                    <li><a href="index.html">Hippodrome</a></li>
+                        <li><a href="news.html">Challenge</a></li>
+                        <li><a href="gallery">My Competition</a></li>
+                        </ul>
+                </div>
+                <div class="col-md-4 footer-grid">
+                    <h3>Sports</h3>
+                    <ul>
+                        <li><a href="index.html">Sports Management</a></li>
+                        <li><a href="news.html">Body Management</a></li>
+                        <li><a href="gallery">Sleep Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 footer-grid">
+                    <h3>Online Forum</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                         <li><a href="#">Home</a></li>
+                          <li><a href="#">Profile</a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>Copyright &copy; 2016.NanJing University Software Engineering - Design by <a href="#" title="" target="_blank">wangjiawei0227@163.com</a></p>
+                </div>
+                <div class="header-right footer-right">
+                    <ul>
+                        <li><a href="#" class="facebook"> </a></li>
+                        <li><a href="#" class="p"> </a></li>
+                        <li><a href="#" class="twitter"> </a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Scripts -->
     <script src="/js/app.js"></script>
 </body>
 </html>

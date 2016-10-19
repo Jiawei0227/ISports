@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-        	<div id="weightandheight" style="width:600px;height:400px;"></div>
+        <div class="col-md-12">
+        	<div id="weightandheight" style="width:900px;height:600px;"></div>
             <div class="panel panel-default">
                 <div class="panel-heading">Weight and Height</div>
                 <div class="panel-body">
@@ -13,10 +13,10 @@
                 </div>
             </div>
             <div class="input-group">
-            	<p>Enter today's weight:</p>
-      			<span><input type="text" class="form-control"></span>
+            	
+      			<span><p>Enter today's weight:</p><input type="text" class="form-control"></span>
       			<span class="input-group-btn">
-        			<button class="btn btn-default" type="button">submit</button>
+        		<button class="btn btn-default" type="button">submit</button>
       			</span>
     		</div><!-- /input-group -->
         </div>
@@ -43,7 +43,7 @@
 <script src="/js/lib/jquery-1.11.2.min.js" type="text/javascript"></script>
 <script src="/js/lib/echarts.min.js" type="text/javascript"></script>
 <script type="text/javascript">
-var weightChart = echarts.init(document.getElementByID('weightandheight'))
+var weightChart = echarts.init(document.getElementById('weightandheight'))
 weightandheightOption = {
     title: {
         text: '身高体重记录',
@@ -129,7 +129,7 @@ weightandheightOption = {
 };
 weightChart.setOption(weightandheightOption)
 
-var bloodpressureChart = echarts.init(document.getElementByID('bloodpressure'))
+var bloodpressureChart = echarts.init(document.getElementById('bloodpressure'))
 bloodpressureOption = {
     title: {
         text: '血压变化情况',

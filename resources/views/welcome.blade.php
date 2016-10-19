@@ -64,7 +64,7 @@
             }
         </style>
     </head>
-    <body>
+    <body background="/images/bg.jpg" style="background-repeat:no-repeat; background-position: center;">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -75,15 +75,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    iSports
+                    <img src="/images/logo2.png">
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{url('/sports')}}" style="font-size:18px;">Sports</a>
+                    <a href="{{url('/competition')}}" style="font-size:18px;">Competition</a>
+                    <a href="{{url('/onlineforum')}}" style="font-size:18px;">OnlineForum</a>
+                    <a href="{{url('/about')}}" style="font-size:18px;">About</a>
                 </div>
             </div>
         </div>
