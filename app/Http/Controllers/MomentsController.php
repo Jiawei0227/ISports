@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class OnlineForumController extends Controller
+class MomentsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,6 @@ class OnlineForumController extends Controller
      */
     public function index()
     {
-        return view('onlineforum');
+        return view('moments');
     }
 }

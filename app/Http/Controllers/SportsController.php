@@ -35,4 +35,14 @@ class SportsController extends Controller
     {
         return view('sports.bodymanagement');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sleepanalysis()
+    {
+        return view('sports.sleepanalysis');
+    }
 }

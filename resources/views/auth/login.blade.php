@@ -48,11 +48,10 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
+                        <div class="form-group coment-form">
+                            <div class="col-md-6 col-md-offset-4">
+                                <input type="submit" value="LOGIN">
+                               
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Forgot Your Password?

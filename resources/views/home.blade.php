@@ -4,9 +4,8 @@
 <!-- banner-bottom -->
     <div class="banner-bottom">
         <div class="container">
-            <h3><span>Doloremque Laudantium Sed</span> ut perspiciatis unde omnis iste natus error sit voluptatem!</h3>
-            <p class="natus">Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                                    accusantium doloremque laudantium.</p>
+            <h3><span>Enjoy yourself!</span> You will get lots of fun from iSports</h3>
+            <p class="natus">See as much as you want.Start exercise from today on! You will rebirth and become a better man.</p>
             <div class="banner-bottom-grids">
                 <div class="col-md-3 banner-bottom-grid">
                     <a href="single.html"><img src="images/3.jpg" alt=" " /></a>
@@ -120,8 +119,9 @@
                         </div>
                     </li>
                 </ul>
+                <script src="/js/lib/jquery.flexisel.js"></script>
                 <script type="text/javascript">
-                require(['flexisel','jquery'],function(flexisel,jquery){
+                require(['jquery'],function($){
                                 $("#flexiselDemo1").flexisel({
                                     visibleItems: 4,
                                     animationSpeed: 1000,
@@ -226,10 +226,26 @@
                 Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
                 voluptatibus maiores alias</p>
 <!-- Slider-starts-Here -->
-                
+                <script src="/js/lib/responsiveslides.min.js"></script>
+                 <script>
+                    // You can also use "$(window).load(function() {"
+                    require(['jquery'],function($){$("#slider3").responsiveSlides({
+                        auto: true,
+                        pager: true,
+                        nav: false,
+                        speed: 500,
+                        namespace: "callbacks",
+                        before: function () {
+                          $('.events').append("<li>before event fired.</li>");
+                        },
+                        after: function () {
+                          $('.events').append("<li>after event fired.</li>");
+                        }
+                      });});
+                  </script>
             <!--//End-slider-script -->
             <div  id="top" class="callbacks_container wow fadeInUp" data-wow-delay="0.5s">
-                <ul class="rslides">
+                <ul class="rslides" id="slider3">
                     <li>
                         <div class="testimonials-grids">
                             <div class="testimonials-grid-left">

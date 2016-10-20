@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<br />
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="coment-form">
-                
+            <div>
+                <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
@@ -65,13 +66,14 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group coment-form">
                             <div class="col-md-6 col-md-offset-4">
-                                <value type="submit" value="Register">
+                                <input type="submit" value="REGISTER">
                                 
                             </div>
                         </div>
                     </form>
+                </div>
             </div>
         </div>
     </div>

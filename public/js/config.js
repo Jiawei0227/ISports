@@ -7,10 +7,15 @@ require.config({
     movetop: 'lib/move-top',
     easing: 'lib/easing',
     flexisel: 'lib/jquery.flexisel',
-    responsiveSlides: 'lib/responsiveslides.min'
+    responsiveSlides: 'lib/responsiveslides.min',
+    highcharts: 'lib/highcharts'
   }
 ,
   shim: {
+    highcharts:{
+      deps: ['jquery'],
+      exports: '$.fn'
+    },
     responsiveSlides: {
       deps: ['jquery'],
       exports: '$.fn'
@@ -31,8 +36,5 @@ require.config({
       deps: ['jquery'],
       exports: '$.fn'
     }
-  },
-  packages: [
-    
-  ]
+  }
 });

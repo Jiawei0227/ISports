@@ -66,10 +66,15 @@
     </head>
     <body background="/images/bg.jpg" style="background-repeat:no-repeat; background-position: center;">
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+            @if (Route::has('login')&&Auth::guest())
                 <div class="top-right links">
-                    <a href="{{ url('/login') }}">Login</a>
-                    <a href="{{ url('/register') }}">Register</a>
+                    <a href="{{ url('/login') }}" style="font-size:18px;">Login</a>
+                    <a href="{{ url('/register') }}" style="font-size:18px;">Register</a>
+                </div>
+            @else
+                <div class="top-right links">
+                    <a style="font-size:18px;">Welcome,</a>
+                    <a href="{{ url('/home') }}" style="font-size:18px;">{{ Auth::user()->name }}</a>
                 </div>
             @endif
 

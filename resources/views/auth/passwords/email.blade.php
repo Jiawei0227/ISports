@@ -5,8 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+            <div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -32,10 +31,9 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
-                                </button>
+                            <div class="col-md-6 col-md-offset-4 coment-form">
+                                <input type="submit" value="Send Password Reset Link">
+                                    
                             </div>
                         </div>
                     </form>

@@ -21,8 +21,18 @@ class CompetitionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function single()
     {
-        return view('competition');
+        return view('competition.singlecompetition');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function group()
+    {
+        return view('competition.groupcompetition');
     }
 }

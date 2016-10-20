@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'iSports') }}</title>
 
     <!-- Styles -->
+<link href="/css/my.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/flexy-menu.css" rel="stylesheet" type="text/css" media="all" />
@@ -60,22 +61,22 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                                 </ul>
                             </li>
 
-                            <li @if (Request::is('competition*')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="#">Competition</a>
+                            <li class="hvr-sweep-to-bottom"><a href="#">Competition</a>
                                 <ul>
                                     
                                     <li><a href="#">Hippodrome</a>
                                         <ul>
-                                            <li><a href="#">Single Competition</a></li>
-                                            <li><a href="#">Group Competition</a></li>
-                                            <li><a href="#">Target Competition</a></li>
+                                            <li @if (Request::is('competition/singlecompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/singlecompetition')}}">Single Competition</a></li>
+                                            <li @if (Request::is('competition/groupcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/groupcompetition')}}">Group Competition</a></li>
+                                            <li @if (Request::is('competition/targetcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="#">Target Competition</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Challenge</a></li>
                                     <li><a href="#">My Competition</a></li>
                                 </ul>
                             </li>
-                            <li @if (Request::is('onlineforum')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/onlineforum')}}">OnlineForum</a></li>
-                            <li @if (Request::is('contact')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="contact.html">Contact Us</a></li>
+                            <li @if (Request::is('moments')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/moments')}}">Moments</a></li>
+                            <li @if (Request::is('about')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{ url('/about') }}">About Us</a></li>
 <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
@@ -122,7 +123,7 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                 </div>
             </div>
             <div class="logo">
-                <a href="{{ url('/home') }}"><img src="/images/logo.png" alt=" " /></a>
+                <a href="{{ url('/') }}"><img src="/images/logo.png" alt=" " /></a>
             </div>
         </div>
     </div>
@@ -153,8 +154,9 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                 <div class="col-md-4 footer-grid">
                     <h3>Online Forum</h3>
                     <ul>
-                        <li><a href="#">Contact Us</a></li>
-                         <li><a href="#">Home</a></li>
+                        <li><a href="{{ url('/about')}}">About Us</a></li>
+                        <li><a href="{{ url('/about')}}">Contact Us</a></li>
+                         <li><a href="{{ url('/home')}}">Home</a></li>
                           <li><a href="#">Profile</a></li>
                     </ul>
                 </div>
@@ -175,7 +177,7 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
             </div>
         </div>
     </div>
-
+    
     <script src="/js/app.js"></script>
 </body>
 </html>

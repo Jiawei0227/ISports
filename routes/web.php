@@ -18,11 +18,16 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('home', 'HomeController@index');
+Route::get('about','HomeController@about');
+Route::get('moments','MomentsController@index');
 
 Route::group(['prefix'=>'sports'],function(){
 	Route::get('bodymanagement','SportsController@bodymanagement');
+	Route::get('sleepanalysis','SportsController@sleepanalysis');
 	Route::get('sportsmanagement','SportsController@index');
 });
 
-Route::get('competition','CompetitionController@index');
-Route::get('onlineforum','OnlineForumController@index');
+Route::group(['prefix'=>'competition'],function(){
+	Route::get('singlecompetition','CompetitionController@single');
+	Route::get('groupcompetition','CompetitionController@group');
+});
