@@ -5,11 +5,9 @@
 	<!-- gallery -->
 	<div class="gallery">
 		<div class="container">
-			<h3>Gallery</h3>
-			<p class="natus">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-				accusantium doloremque laudantium. To take a trivial example, which of us ever undertakes
-				laborious physical exercise, except to obtain some advantage from it?
-				But who has any right to find fault</p>
+			<h3>Sports Wiki</h3>
+			<p class="natus">Here are some kinds of sports that we often play. Click the picture to learn more about
+			the detail of this sports and share your idea with others! Enjoy your self and learn more!</p>
 			<div class="gallery-grids">
 				<div class="col-md-4 gallery-grid">
 					<div class="gallery-grd">

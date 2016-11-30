@@ -15,6 +15,10 @@
                             <p id="intro" class="col-md-7">{{ $competition->endtime }}</p>
                             <label for="author" class="col-md-3">COMTYPE:</label>
                             <p id="author" class="col-md-7">{{ $competition->comType }}</p>
+                            <label for="money" class="col-md-3">MONEY:</label>
+                            <p id="money" class="col-md-7">{{ $competition->money }} ￥</p>
+                            <label for="total" class="col-md-3">REWARD:</label>
+                            <p id="total" class="col-md-7">{{ $competition->total }} ￥</p>
                             <label for="techni" class="col-md-3">DESCRIBITION:</label>
                             <p id="techni" class="col-md-7">{{ $competition->description }}</p>
                             <label for="participant" class="col-md-3">PARTICIPANT:</label>

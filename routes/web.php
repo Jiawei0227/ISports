@@ -38,6 +38,7 @@ Route::group(['prefix'=>'sports'],function(){
 	Route::get('sportsmanagement','SportsController@index');
 
     Route::get('sportsdata','SportsController@sportsdata');
+    Route::get('finalanalysis','SportsController@sportsanalysis');
 
     Route::get('info','SportsController@info');
 

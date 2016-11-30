@@ -82,13 +82,24 @@ class CompetitionController extends Controller
     }
 
     public function store(CompetitionCreateRequest $request){
+
         $competition = new Competition();
         $competition->user_id = Auth::user()->id;
         $competition->name = $request->get("comName");
         $competition->comType = $request->get("comType");
         $competition->endtime = $request->get("comTime");
         $competition->description = $request->get("comDesc");
+        $competition->money = intval($request->get("comMoney"));
+        $competition->total = intval($request->get("comMoney"));
+        //dd($competition->money);
+        //dd(Auth::user()->wealth);
+        if($competition->money>intval(Auth::user()->wealth))
+            return redirect('/competition/info')
+                ->with('info',"The competition '$competition->name' was not created Because you do not have enough money!");
+
         $competition->save();
+        Auth::user()->wealth-=$request->get("comMoney");
+        Auth::user()->save();
 
         $competition_user = new Competition_user();
         $competition_user->user_id = Auth::user()->id;
@@ -103,6 +114,17 @@ class CompetitionController extends Controller
     }
 
     public function join(){
+        $competition = Competition::whereId(request("competition_id"))->first();
+        //dd($competition);
+        if($competition->money>intval(Auth::user()->wealth))
+            return redirect('/competition/info')
+                ->with('info',"You cannot join the '$competition->name' Because you do not have enough money!");
+
+        $competition->total+=intval($competition->money);
+        $competition->save();
+        Auth::user()->wealth -= intval($competition->money);
+        Auth::user()->save();
+
         $competition_user = new Competition_user();
         $competition_user->user_id = Auth::user()->id;
         $competition_user->user_name = Auth::user()->name;
