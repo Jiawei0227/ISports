@@ -479,7 +479,7 @@ position:relative;
   display: block;
   font-weight: 600;
   color: #FEC514;
-  font-size: 2em;
+  font-size: 1.45em;
 }
 .news-grd-right h4 a{
 	color: #527994;
@@ -677,7 +677,7 @@ p.aut{
 #slider3-pager a ,#slider2-pager a,#slider4-pager a{
   padding: 0;
 }
-#slider3-pager li,#slider4-pager li,#slider2-pager li,{
+#slider3-pager li,#slider4-pager li,#slider2-pager li{
 	display:inline-block;
 }
 .rslides {
@@ -1241,7 +1241,7 @@ ul.pagination li a {
 .btn-primary {
   color: #0A0A0A;
   background-color: none !important;
-  border-color: none !important;
+	border-color: none;
 }
 a.list-group-item:hover, a.list-group-item:focus {
   color: #F4F1F1 !important;

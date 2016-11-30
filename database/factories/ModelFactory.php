@@ -29,5 +29,15 @@ $factory->define(App\Sportsrecord::class,function(Faker\Generator $faker){
        'format' => $faker->word,
        'duration' => $faker->word,
        'published_at' => $faker->dateTimeBetween('-1 month','+3 days'),
+       'comType' => 'single'
    ] ;
+});
+
+$factory->define(App\Competition::class, function ($faker) {
+    return [
+        'name' => $faker->sentence(mt_rand(3, 10)),
+        'comType' => 'single',
+        'description' => join("\n\n", $faker->paragraphs(mt_rand(3, 6))),
+        'endtime' => $faker->dateTimeBetween('-1 month', '+3 days'),
+    ];
 });

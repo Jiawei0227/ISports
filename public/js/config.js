@@ -8,7 +8,8 @@ require.config({
     easing: 'lib/easing',
     flexisel: 'lib/jquery.flexisel',
     responsiveSlides: 'lib/responsiveslides.min',
-    highcharts: 'lib/highcharts'
+    highcharts: 'lib/highcharts',
+    datetimepicker: 'lib/bootstrap-datetimepicker.min'
   }
 ,
   shim: {

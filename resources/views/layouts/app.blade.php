@@ -68,11 +68,11 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                                         <ul>
                                             <li @if (Request::is('competition/singlecompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/singlecompetition')}}">Single Competition</a></li>
                                             <li @if (Request::is('competition/groupcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/groupcompetition')}}">Group Competition</a></li>
-                                            <li @if (Request::is('competition/targetcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="#">Target Competition</a></li>
+                                            <li @if (Request::is('competition/targetcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/targetcompetition')}}">Target Competition</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Challenge</a></li>
-                                    <li><a href="#">My Competition</a></li>
+                                    <li @if (Request::is('competition/launchcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/launchcompetition')}}">Launch Competition</a></li>
+                                    <li><a href="{{url('/competition/mycompetition')}}">My Competition</a></li>
                                 </ul>
                             </li>
                             <li @if (Request::is('moments')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/moments')}}">Moments</a></li>
@@ -99,7 +99,7 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                                     </li>
                                     <li>
                                         <a href="#">
-                                            Property Management
+                                            Launch My Moments
                                         </a>
                                     </li>
                                     <li class="divider"></li>
@@ -177,7 +177,7 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
             </div>
         </div>
     </div>
-    
+    @yield('script')
     <script src="/js/app.js"></script>
 </body>
 </html>
