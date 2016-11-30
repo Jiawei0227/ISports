@@ -4,7 +4,7 @@
 <br />
 <div class="container">
 	<div class="row">
-	<div id="container" style="width:1000px; height:600px"></div>
+	<div id="container" style="width:1100px; height:600px"></div>
 	</div>
 	<br />
 	<br />
@@ -21,11 +21,12 @@
 		</div>
 		<div class="col-md-6">
 			<div class="contact-textarea">
-				<form>
+				<form method="POST"  action={{ url('sports/sleepdata') }}>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<h3>Submit Today's Sleep Time</h3>
 						<h4 align="center">Please submit your sleep today so we can keep track on you.</h4>
-						<input type="text" value="Today's Sleeping hour" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}"/>
-						<textarea value="Feeling:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">What's your feeling today?</textarea>
+						<input type="text" name='sleep_data' value="Today's Sleeping hour" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Today\'s Sleeping hour';}"/>
+
 						<input type="submit" value="SUBMIT" style="width:100%;">
 					</form>
 			</div>
@@ -37,18 +38,24 @@
 <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
 <script type="text/javascript">
 require(['jquery'],function($){
+    var sleep_date = [];
+    var sleep_data = [];
+    @foreach($sleeprecords as $sleeprecord)
+        sleep_date.push('{{$sleeprecord->sleep_date}}');
+        sleep_data.push({{$sleeprecord->sleep_record}});
+    @endforeach
 	 $('#container').highcharts({
         chart: {
             type: 'line'
         },
         title: {
-            text: 'Sleep Records'
+            text: 'Sleeping Records'
         },
         subtitle: {
             text: 'time: 1 year'
         },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            categories: sleep_date
         },
         yAxis: {
             title: {
@@ -64,11 +71,8 @@ require(['jquery'],function($){
             }
         },
         series: [{
-            name: '2015',
-            data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-        }, {
-            name: '2016',
-            data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+            name: 'Sleeping Time Records',
+            data: sleep_data
         }],
         credits: {
         	enabled: false
