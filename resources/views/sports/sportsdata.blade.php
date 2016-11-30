@@ -5,7 +5,7 @@
 <!-- services -->
 <div id="services" class="services">
     <div class="container">
-        <h3>Services</h3>
+        <h3>Here are all the sports data!</h3>
         <p class="natus aut">Here are your sports data,Please click some for more details.</p>
         <div class="service-grids">
             <ul id="flexiselDemo1">
@@ -50,10 +50,22 @@
                         <div class="glb">
                             <span class="glyphicon iusto glyphicon-signal" aria-hidden="true"></span>
                         </div>
-                        <h4><a href="single.html">Final Analysis Data</a></h4>
-                        <p>The final analysis data is the data that collect from your device that records your sports data and analyze the data automatically.</p>
+                        <h4><a href={{ url('sports/finalanalysis') }}>Sports Data Analysis</a></h4>
+                        <p>The Sports analysis data is the data that collect from your device that records your sports data and analyze the data automatically.</p>
                         <div class="learn">
-                            <a href="single.html">Learn More</a>
+                            <a href={{ url('sports/finalanalysis') }}>Learn More</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-grid">
+                        <div class="glb">
+                            <span class="glyphicon iusto glyphicon-star" aria-hidden="true"></span>
+                        </div>
+                        <h4><a href={{ url('sports/bodymanagement') }}>Body Data</a></h4>
+                        <p>The Body data is the data that collect from your device that records your BODY data and analyze the data automatically.</p>
+                        <div class="learn">
+                            <a href={{ url('sports/bodymanagement') }}>Learn More</a>
                         </div>
                     </div>
                 </li>

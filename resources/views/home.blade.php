@@ -2,156 +2,158 @@
 
 @section('content')
 <!-- banner-bottom -->
-    <div class="banner-bottom">
-        <div class="container">
-            <h3><span>Enjoy yourself!</span> You will get lots of fun from iSports</h3>
-            <p class="natus">See as much as you want.Start exercise from today on! You will rebirth and become a better man.</p>
-            <div class="banner-bottom-grids">
-                <div class="col-md-3 banner-bottom-grid">
-                    <a href="single.html"><img src="images/3.jpg" alt=" " /></a>
-                    <h4><a href="single.html">Temporibus Autem Quibusdam</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                    et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                    <div class="more">
-                        <a href="single.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-3 banner-bottom-grid">
-                    <a href="single.html"><img src="images/4.jpg" alt=" " /></a>
-                    <h4 class="line"><a href="single.html">Vel dolorem eum fugiat</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                    et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                    <div class="more">
-                        <a href="single.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-3 banner-bottom-grid">
-                    <a href="single.html"><img src="images/5.jpg" alt=" " /></a>
-                    <h4><a href="single.html">cupiditate non provident</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                    et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                    <div class="more">
-                        <a href="single.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-3 banner-bottom-grid">
-                    <a href="single.html"><img src="images/6.jpg" alt=" " /></a>
-                    <h4 class="line"><a href="single.html">blanditiis atque corrupti</a></h4>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                    et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                    <div class="more">
-                        <a href="single.html">Learn More</a>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-<!-- //banner-bottom -->
-<!-- services -->
-    <div id="services" class="services">
-        <div class="container">
-            <h3>Services</h3>
-            <p class="natus aut">Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-                voluptatibus maiores alias</p>
-            <div class="service-grids">
-                <ul id="flexiselDemo1">         
-                    <li>
-                        <div class="service-grid">
-                            <div class="glb">
-                                <span class="glyphicon iusto glyphicon-globe" aria-hidden="true"></span>
-                            </div>
-                            <h4><a href="single.html">Temporibus Autem Quibusdam</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                            blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                            et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                            <div class="learn">
-                                <a href="single.html">Learn More</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-grid">
-                                <div class="glb">
-                                    <span class="glyphicon iusto glyphicon-cloud" aria-hidden="true"></span>
-                                </div>
-                                <h4><a href="single.html">Temporibus Autem Quibusdam</a></h4>
-                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                                blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                                et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                                <div class="learn">
-                                    <a href="single.html">Learn More</a>
-                                </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-grid">
-                            <div class="glb">
-                                <span class="glyphicon iusto glyphicon-star" aria-hidden="true"></span>
-                            </div>
-                            <h4><a href="single.html">Temporibus Autem Quibusdam</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                            blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                            et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                            <div class="learn">
-                                <a href="single.html">Learn More</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="service-grid">
-                            <div class="glb">
-                                <span class="glyphicon iusto glyphicon-signal" aria-hidden="true"></span>
-                            </div>
-                            <h4><a href="single.html">Temporibus Autem Quibusdam</a></h4>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-                            blanditiis praesentium voluptatum deleniti atque corrupti quos dolores 
-                            et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-                            <div class="learn">
-                                <a href="single.html">Learn More</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <script src="/js/lib/jquery.flexisel.js"></script>
-                <script type="text/javascript">
-                require(['jquery'],function($){
-                                $("#flexiselDemo1").flexisel({
-                                    visibleItems: 4,
-                                    animationSpeed: 1000,
-                                    autoPlay: true,
-                                    autoPlaySpeed: 3000,            
-                                    pauseOnHover: true,
-                                    enableResponsiveBreakpoints: true,
-                                    responsiveBreakpoints: { 
-                                        portrait: { 
-                                            changePoint:480,
-                                            visibleItems: 1
-                                        }, 
-                                        landscape: { 
-                                            changePoint:640,
-                                            visibleItems:3
-                                        },
-                                        tablet: { 
-                                            changePoint:768,
-                                            visibleItems: 3
-                                        }
-                                    }
-                                });
-                                
-                            });
-                    </script>
+<div class="banner-bottom">
+    <div class="container">
+        <h3><span>Here is your Sports Data Analysis.</span> UpLoad more datas and become stronger!</h3>
+        <p class="natus">Please keep in good health and do more exercise.</p>
+        <div class="banner-bottom-grids">
+            <div class="col-md-3 banner-bottom-grid">
+                <a href={{ url('sports/runningmanagement') }}><img src="/images/3.jpg" alt=" " /></a>
+                <h4><a href={{ url('sports/runningmanagement') }}>Running</a></h4>
+                <p>Running day : {{ $runday }} day</p>
+                <p>First Run day : {{ $firstruntime }}</p>
+                <p>Last  Run day : {{ $lastruntime }}</p>
+                <p>Running average per day: {{ $runaverage }} km</p>
+                <p>Total Running distance: {{ $runtotal }} km</p>
 
             </div>
+            <div class="col-md-3 banner-bottom-grid">
+                <a href={{ url('sports/walkingmanagement') }}><img src="/images/4.jpg" alt=" " /></a>
+                <h4 class="line"><a href={{ url('sports/walkingmanagement') }}>Walking</a></h4>
+                <p>Walking day : {{ $walkday }} day</p>
+                <p>First Walk day : {{ $firstwalktime }}</p>
+                <p>Last  Walk day : {{ $lastwalktime }}</p>
+                <p>Walking average per day: {{ $walkaverage }} path</p>
+                <p>Total Walking distance: {{ $walkcount }} path</p>
+
+            </div>
+            <div class="col-md-3 banner-bottom-grid">
+                <a href={{ url('sports/bodymanagement') }}><img src="/images/5.jpg" alt=" " /></a>
+                <h4><a href={{ url('sports/bodymanagement') }}>Body</a></h4>
+                <p>First Weight day : {{ $firstweight }}</p>
+                <p>Last  Weight day : {{ $lastweight }}</p>
+                <p>Weight average: {{ $weightaverage }} KG</p>
+                <p>HighBlood Pressure average: {{ $highblood_avg }} mmHg</p>
+                <p>LowBlood  Pressure average: {{ $lowblood_avg }} mmHg</p>
+
+            </div>
+            <div class="col-md-3 banner-bottom-grid">
+                <a href={{ url('sports/sleepanalysis') }}><img src="/images/6.jpg" alt=" " /></a>
+                <h4 class="line"><a href={{ url('sports/sleepanalysis') }}>Sleeping</a></h4>
+                <p>Sleeping day : {{ $sleepday }} day</p>
+                <p>First Sleep day : {{ $firstsleep }}</p>
+                <p>Last  Sleep day : {{ $lastsleep }}</p>
+                <p>Sleeping average per day: {{ $sleepaverage }} hour</p>
+                <p>Total Sleeping hour: {{ $sleepcount }} hour</p>
+
+            </div>
+            <div class="clearfix"> </div>
         </div>
     </div>
+</div>
+<!-- //banner-bottom -->
+<!-- services -->
+<div id="services" class="services">
+    <div class="container">
+        <h3>Here are all the sports data!</h3>
+        <p class="natus aut">Here are your sports data,Please click some for more details.</p>
+        <div class="service-grids">
+            <ul id="flexiselDemo1">
+                <li>
+                    <div class="service-grid">
+                        <div class="glb">
+                            <span class="glyphicon iusto glyphicon-globe" aria-hidden="true"></span>
+                        </div>
+                        <h4><a href={{ url('sports/runningmanagement') }}>Running Data</a></h4>
+                        <p>The Running Data is the data you run every day. You can upload your running records through our interface or you can buy our device to upload automatically.</p>
+                        <div class="learn">
+                            <a href="{{ url('sports/runningmanagement') }}">Learn More</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-grid">
+                        <div class="glb">
+                            <span class="glyphicon iusto glyphicon-cloud" aria-hidden="true"></span>
+                        </div>
+                        <h4><a href="{{ url('sports/walkingmanagement') }}">Walking Data</a></h4>
+                        <p>The Walking Data is the data you walk every day. You can upload your walking records through our interface or you can buy our device to upload automatically.</p>
+                        <div class="learn">
+                            <a href="{{ url('sports/walkingmanagement') }}">Learn More</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-grid">
+                        <div class="glb">
+                            <span class="glyphicon iusto glyphicon-star" aria-hidden="true"></span>
+                        </div>
+                        <h4><a href={{ url('sports/sleepanalysis') }}>Sleeping Data</a></h4>
+                        <p>The Sleeping Data is the data you sleep every day. You can upload your sleeping records through our interface or you can buy our device to upload automatically.</p>
+                        <div class="learn">
+                            <a href={{ url('sports/sleepanalysis') }}>Learn More</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-grid">
+                        <div class="glb">
+                            <span class="glyphicon iusto glyphicon-signal" aria-hidden="true"></span>
+                        </div>
+                        <h4><a href={{ url('sports/finalanalysis') }}>Sports Data Analysis</a></h4>
+                        <p>The final analysis data is the data that collect from your device that records your sports data and analyze the data automatically.</p>
+                        <div class="learn">
+                            <a href={{ url('sports/finalanalysis') }}>Learn More</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="service-grid">
+                        <div class="glb">
+                            <span class="glyphicon iusto glyphicon-star" aria-hidden="true"></span>
+                        </div>
+                        <h4><a href={{ url('sports/bodymanagement') }}>Body Data</a></h4>
+                        <p>The Body data is the data that collect from your device that records your BODY data and analyze the data automatically.</p>
+                        <div class="learn">
+                            <a href={{ url('sports/bodymanagement') }}>Learn More</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <script src="/js/lib/jquery.flexisel.js"></script>
+            <script type="text/javascript">
+                require(['jquery'],function($){
+                    $("#flexiselDemo1").flexisel({
+                        visibleItems: 4,
+                        animationSpeed: 1000,
+                        autoPlay: true,
+                        autoPlaySpeed: 3000,
+                        pauseOnHover: true,
+                        enableResponsiveBreakpoints: true,
+                        responsiveBreakpoints: {
+                            portrait: {
+                                changePoint:480,
+                                visibleItems: 1
+                            },
+                            landscape: {
+                                changePoint:640,
+                                visibleItems:3
+                            },
+                            tablet: {
+                                changePoint:768,
+                                visibleItems: 3
+                            }
+                        }
+                    });
+
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
 <!-- //services -->
+
 <!-- news -->
     <div id="news" class="news">
         <div class="container">

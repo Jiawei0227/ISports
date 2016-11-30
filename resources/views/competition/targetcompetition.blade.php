@@ -22,6 +22,8 @@
                         <div class="col-md-6 news-grd-right">
                             <h4><a href="/competition/singlecompetition/{{$competition->id}}">{{ $competition->name }}</a></h4>
                             <h4>Type :{{ $competition->comType }}</h4>
+                            <h4>Money:{{ $competition->money }} ￥</h4>
+                            <h4>Reword:{{ $competition->total }} ￥</h4>
                             <p>
                                 {{ str_limit($competition->description) }}
                             </p>

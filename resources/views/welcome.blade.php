@@ -84,8 +84,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{url('/sports')}}" style="font-size:18px;">Sports</a>
-                    <a href="{{url('/competition')}}" style="font-size:18px;">Competition</a>
+                    <a href="{{url('/sports/finalanalysis')}}" style="font-size:18px;">Sports</a>
+                    <a href="{{url('/competition/mycompetition')}}" style="font-size:18px;">Competition</a>
                     <a href="{{url('/moments')}}" style="font-size:18px;">Moments</a>
                     <a href="{{url('/about')}}" style="font-size:18px;">About</a>
                 </div>
