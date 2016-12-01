@@ -88,17 +88,17 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href={{ url('user/usermanagement') }}>
                                             User Management
                                         </a>   
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href={{ url('user/friendmanagement') }}>
                                             Friends Management
                                         </a>   
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href={{ url('user/launchmoments') }}>
                                             Launch My Moments
                                         </a>
                                     </li>
@@ -138,26 +138,26 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                 <div class="col-md-4 footer-grid">
                     <h3>Competition</h3>
                     <ul>
-                    <li><a href="index.html">Hippodrome</a></li>
-                        <li><a href="news.html">Challenge</a></li>
-                        <li><a href="gallery">My Competition</a></li>
+                    <li><a href={{ url('/competition/singlecompetition')}}>Hippodrome</a></li>
+                        <li><a href={{ url('/competition/launchcompetition')}}>Launch Competition</a></li>
+                        <li><a href={{ url('/competition/mycompetition')}}">My Competition</a></li>
                         </ul>
                 </div>
                 <div class="col-md-4 footer-grid">
                     <h3>Sports</h3>
                     <ul>
-                        <li><a href="index.html">Sports Management</a></li>
-                        <li><a href="news.html">Body Management</a></li>
-                        <li><a href="gallery">Sleep Analysis</a></li>
+                        <li><a href={{ url('/sports/sportsmanagement')}}>Sports Management</a></li>
+                        <li><a href={{ url('/sports/bodymanagement')}}">Body Management</a></li>
+                        <li><a href={{ url('/sports/sportsdata')}}>Sports Data</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 footer-grid">
-                    <h3>Online Forum</h3>
+                    <h3>Moments</h3>
                     <ul>
                         <li><a href="{{ url('/about')}}">About Us</a></li>
                         <li><a href="{{ url('/about')}}">Contact Us</a></li>
                          <li><a href="{{ url('/home')}}">Home</a></li>
-                          <li><a href="#">Profile</a></li>
+                          <li><a href="{{ url('/user/usermanagement')}}">Profile</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>

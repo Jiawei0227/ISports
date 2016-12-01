@@ -32,6 +32,8 @@
 
                                 <input type="text" value="Competition Name" name="comName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Competition Name';}"/>
 
+                                <input type="text" value="Competition Limit Experience" name="comLimit" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Competition Limit Experience';}"/>
+
                                 <input type="text" value="Competition Money" name="comMoney" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Competition Money';}"/>
 
                                 <div class="input-append date form_datetime">
