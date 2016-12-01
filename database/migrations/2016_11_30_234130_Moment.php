@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRunRecordsTable extends Migration
+class Moment extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateRunRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('run_records', function (Blueprint $table) {
+        //
+        Schema::create('Moments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->double('run_record');
-            $table->date('run_date');
+            $table->string('title');
+            $table->text('content');
+            $table->integer('like');
+            $table->string('photo');
             $table->timestamps();
         });
     }
@@ -29,6 +32,6 @@ class CreateRunRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('run_records');
+        //
     }
 }

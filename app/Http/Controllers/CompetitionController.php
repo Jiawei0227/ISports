@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Competition_user;
+use App\User;
 use Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\CompetitionCreateRequest;
@@ -29,6 +30,11 @@ class CompetitionController extends Controller
         $this->middleware('auth');
     }
 
+    public function notAllowed(){
+        return redirect('/competition/info')
+            ->with('info',"You do not have the permission to view this Competition.");
+    }
+
     /**
      * Show the application dashboard.
      *
@@ -36,7 +42,7 @@ class CompetitionController extends Controller
      */
     public function single()
     {
-        $competitions = Competition::where('endtime','<', Carbon::now())->Where('comType','single')
+        $competitions = Competition::where('endtime','>', Carbon::now())->Where('comType','single')
             ->orderBy('published_at', 'desc')
             ->paginate(config('competition.competition_per_page'));
 
@@ -46,14 +52,18 @@ class CompetitionController extends Controller
     public function showComp($id){
         $competition = Competition::whereId($id)->firstOrFail();
         $user = $competition->user;
-        $userLists = Competition_user::where('competition_id',$id)->get();
+        $usersList = collect();
+        $userLists= Competition_user::where('competition_id',$id)->get();
+        foreach($userLists as $partuser){
+            $usersList->push(User::whereId($partuser->user_id)->first());
+        }
         $isJoin = Competition_user::where('competition_id',$id)->where('user_id',Auth::user()->id)->first();
         if($isJoin == null)
             $isJoin = false;
         else
             $isJoin = true;
         //dd($userLists);
-        return view('competition.competitiondetail')->withCompetition($competition)->with('user',$user)->with('userLists',$userLists)->with('isJoin',$isJoin);
+        return view('competition.competitiondetail')->withCompetition($competition)->with('user',$user)->with('userLists',$userLists)->with('isJoin',$isJoin)->with('usersList',$usersList);
     }
 
     /**
@@ -86,6 +96,7 @@ class CompetitionController extends Controller
         $competition = new Competition();
         $competition->user_id = Auth::user()->id;
         $competition->name = $request->get("comName");
+        $competition->limit_exp = $request->get('comLimit');
         $competition->comType = $request->get("comType");
         $competition->endtime = $request->get("comTime");
         $competition->description = $request->get("comDesc");
@@ -99,6 +110,7 @@ class CompetitionController extends Controller
 
         $competition->save();
         Auth::user()->wealth-=$request->get("comMoney");
+        Auth::user()->experience+=config('competition.experience_per_launch');
         Auth::user()->save();
 
         $competition_user = new Competition_user();
@@ -110,7 +122,7 @@ class CompetitionController extends Controller
 
 
         return redirect('/competition/info')
-            ->with('info',"The competition '$competition->name' was created successfully.");
+            ->with('info',"The competition '$competition->name' was created successfully. You have gained 5 exp.");
     }
 
     public function join(){

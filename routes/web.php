@@ -21,6 +21,28 @@ Route::get('home', 'HomeController@index');
 Route::get('about','HomeController@about');
 Route::get('moments','MomentsController@index');
 
+
+Route::group(['prefix'=>'moments'],function(){
+    Route::get('like/{id}','MomentsController@like');
+    Route::get('/{id}','MomentsController@detail');
+    Route::post('launchmoment','MomentsController@launch');
+    Route::post('comment','MomentsController@comment');
+    Route::get('info','UserController@info');
+});
+
+Route::group(['prefix'=>'user'],function(){
+    Route::get('usermanagement','UserController@usermanagement');
+    Route::post('userphoto','UserController@userphoto');
+    Route::get('launchmoments','UserController@launchmoments');
+    Route::post('userdata','UserController@userdata');
+
+    Route::get('friendmanagement','UserController@friendmanagement');
+    Route::post('friendmanagement/addfriend','UserController@addfriend');
+    Route::get('friendmanagement/deletefriend/{id}','UserController@deletefriend');
+
+    Route::get('info','UserController@info');
+});
+
 Route::group(['prefix'=>'sports'],function(){
 	Route::get('bodymanagement','SportsController@bodymanagement');
     Route::post('bloodpressuredata','SportsController@bloodpressuredata');
@@ -46,13 +68,13 @@ Route::group(['prefix'=>'sports'],function(){
 
 Route::group(['prefix'=>'competition'],function(){
 	Route::get('singlecompetition','CompetitionController@single');
-    Route::get('singlecompetition/{id}', 'CompetitionController@showComp');
+    Route::get('singlecompetition/{id}', 'CompetitionController@showComp')->middleware('explimit');
 
     Route::get('groupcompetition','CompetitionController@group');
-    Route::get('groupcompetition/{id}', 'CompetitionController@showComp');
+    Route::get('groupcompetition/{id}', 'CompetitionController@showComp')->middleware('explimit');
 
     Route::get('targetcompetition','CompetitionController@target');
-    Route::get('targetcompetition/{id}', 'CompetitionController@showComp');
+    Route::get('targetcompetition/{id}', 'CompetitionController@showComp')->middleware('explimit');
 
     Route::get('mycompetition','CompetitionController@mycompetition');
 
@@ -63,4 +85,6 @@ Route::group(['prefix'=>'competition'],function(){
     Route::post('launchComp','CompetitionController@store');
 
     Route::get('info','CompetitionController@info');
+
+    Route::get('notAllowed','CompetitionController@notallowed');
 });

@@ -7,6 +7,7 @@
  */
 
 return [
-    'competition_per_page' => 8,
-    'experience_per_launch' => 5
+    'moment_per_page' => 3,
+    'experience_per_moment' => 5,
+    'experience_per_comment' =>2
 ];

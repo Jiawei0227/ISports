@@ -157,63 +157,34 @@
 <!-- news -->
     <div id="news" class="news">
         <div class="container">
-            <h3>News & Events</h3>
-            <p class="natus">Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-                voluptatibus maiores alias</p>
+            <h3>Recent Competition</h3>
+            <p class="natus">Here are some competitions that been launched recently. You can enjoy yourself through it!</p>
             <div class="news-grids">
-                <div class="col-md-6 news-grid">
-                    <div class="col-md-6 news-grd">
-                        <p>10<span>JUNE</span>2015</p>
+                @foreach ($competitions as $competition)
+                    <?php
+                    $year = explode(" ",$competition->endtime)[0];
+                    $month = explode(" ",$competition->endtime)[1];
+                    $day = explode(" ",$competition->endtime)[2];
+
+                    ?>
+                    <div class="col-md-6 news-grid">
+                        <div class="col-md-6 news-grd">
+                            <p>{{ $day }}<span>{{$month}}</span>{{$year}}</p>
+                        </div>
+                        <div class="col-md-6 news-grd-right">
+                            <h4><a href="/competition/singlecompetition/{{$competition->id}}">{{ $competition->name }}</a></h4>
+                            <h4>Type :{{ $competition->comType }}</h4>
+                            <h4>Money:{{ $competition->money }} ￥</h4>
+                            <h4>Reword:{{ $competition->total }} ￥</h4>
+                            <p>
+                                {{ str_limit($competition->description) }}
+                            </p>
+                        </div>
+                        <div class="clearfix"> </div>
+                        <br />
                     </div>
-                    <div class="col-md-6 news-grd-right">
-                        <h4><a href="single.html">repudiandae sint et molestiae sapiente</a></h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                        accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                        Itaque earum rerum hic tenetur a sapiente delectus.</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="col-md-6 news-grid">
-                    <div class="col-md-6 news-grd">
-                        <p>20<span>JUNE</span>2015</p>
-                    </div>
-                    <div class="col-md-6 news-grd-right">
-                        <h4><a href="single.html"> Nemo enim ipsam voluptatem quia aspernatur</a></h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                        accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                        Itaque earum rerum hic tenetur a sapiente delectus.</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="news-grids">
-                <div class="col-md-6 news-grid">
-                    <div class="col-md-6 news-grd">
-                        <p>10<span>APRIL</span>2015</p>
-                    </div>
-                    <div class="col-md-6 news-grd-right">
-                        <h4><a href="single.html">repudiandae sint et molestiae sapiente</a></h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                        accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                        Itaque earum rerum hic tenetur a sapiente delectus.</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="col-md-6 news-grid">
-                    <div class="col-md-6 news-grd">
-                        <p>20<span>APRIL</span>2015</p>
-                    </div>
-                    <div class="col-md-6 news-grd-right">
-                        <h4><a href="single.html"> Nemo enim ipsam voluptatem quia aspernatur</a></h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                        accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                        Itaque earum rerum hic tenetur a sapiente delectus.</p>
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
+
+                @endforeach
                 <div class="clearfix"> </div>
             </div>
         </div>
@@ -222,11 +193,8 @@
 <!-- testimonials -->
     <div class="testimonials">
         <div class="container">
-            <h3>Testimonials</h3>
-            <p class="aut">Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
-                accusantium doloremque laudantium. repudiandae sint et molestiae non recusandae.
-                Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis 
-                voluptatibus maiores alias</p>
+            <h3>Star Users</h3>
+            <p class="aut">Star Users are the users who become more and more popular recently!</p>
 <!-- Slider-starts-Here -->
                 <script src="/js/lib/responsiveslides.min.js"></script>
                  <script>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Bloodpressure;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -62,9 +63,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //$bloodpressure = new Bloodpressure();
+        //$bloodpressure->user_id =
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'user_photo' => '/storage/unknown.jpg',
+            'wealth' => 100,
+            'intro' => 'The user did not give the intro about himself.',
             'password' => bcrypt($data['password']),
         ]);
     }

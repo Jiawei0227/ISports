@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRunRecordsTable extends Migration
+class CreateFriendsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateRunRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('run_records', function (Blueprint $table) {
+        Schema::create('friends', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->double('run_record');
-            $table->date('run_date');
+            $table->integer('follow_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateRunRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('run_records');
+        Schema::dropIfExists('friends');
     }
 }

@@ -8,13 +8,18 @@
                     <div class="col-md-8 col-md-offset-2">
                         <div class="about-textarea">
                             <label for="author" class="col-md-3">LAUNCHER:</label>
-                            <p id="author" class="col-md-7">{{ $user->name }}</p>
+                            <div class="col-md-7">
+                            <img id="author" src="{{ $user->user_photo }}" width="50" height="50">
+                            <p style="font-size:25px; color:#f82b4c">{{ $user->name }}</p>
+                            </div>
                             <label for="email" class="col-md-3">E-MAIL:</label>
                             <p id="email" class="col-md-7">{{ $user->email }}</p>
                             <label for="intro" class="col-md-3">ENDTIME:</label>
                             <p id="intro" class="col-md-7">{{ $competition->endtime }}</p>
                             <label for="author" class="col-md-3">COMTYPE:</label>
                             <p id="author" class="col-md-7">{{ $competition->comType }}</p>
+                            <label for="limit" class="col-md-3">LIMIT EXP:</label>
+                            <p style="color: blue" id="limit" class="col-md-7">{{ $competition->limit_exp }} exp</p>
                             <label for="money" class="col-md-3">MONEY:</label>
                             <p id="money" class="col-md-7">{{ $competition->money }} ￥</p>
                             <label for="total" class="col-md-3">REWARD:</label>
@@ -22,12 +27,17 @@
                             <label for="techni" class="col-md-3">DESCRIBITION:</label>
                             <p id="techni" class="col-md-7">{{ $competition->description }}</p>
                             <label for="participant" class="col-md-3">PARTICIPANT:</label>
-                            <div id="participant" class="col-md-7">
+
+                                <?php $i=0; ?>
                                 @foreach($userLists as $puser)
-                                    <label style="color:#02b8fa;" class="col-md-6" id="{{ $puser->user_id }}">{{ $puser->user_name }}</label>
-                                    <label style="color:#02b8fa;" for="{{ $puser->user_id }}" class="col-md-3">PATH: {{ $puser->path }}</label>
-                                @endforeach
-                            </div>
+                                <div class="col-md-2">
+                                    <img style="text-align:center;display:block;position:relative;margin:auto;" src="{{ $usersList[$i]->user_photo }}" width="50" height="50">
+                                    <p style="color:#02b8fa; text-align:center;">{{ $usersList[$i]->name }}</p>
+                                    <p style="color:#02b8fa; text-align:center;">PATH: {{ $puser->path }}</p>
+                                        <?php $i++; ?>
+                                </div>
+                                    @endforeach
+
                         </div>
                         <br />
                         <br />
