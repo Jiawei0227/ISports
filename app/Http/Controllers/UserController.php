@@ -19,6 +19,35 @@ class UserController extends Controller
         return view('user.launchmoments');
     }
 
+    /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data)
+    {
+        $preg='/^[a-zA-Z\x{4e00}-\x{9fa5}]{6,20}$/u';
+        $preg2='/^[a-zA-Z]+$/u';
+        $preg3='/^[\x{4e00}-\x{9fa5}]+$/u';
+
+        if(preg_match($preg2,$data) || preg_match($preg3,$data)){
+            return redirect('/competition/info',"ERROR");//纯中文或纯英文
+        }elseif(preg_match($preg,$data)){
+            $this->launchmoments();
+        }else{
+            return redirect('/competition/info',"ERROR");//纯中文或纯英文
+        }
+
+        //英文、数字、下划线6-20位字符
+        $preg='/^[\w\_]{6,20}$/u';
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+    }
+
     public function deletefriend($id){
         friend::where('follow_id',$id)->where('user_id',Auth::user()->id)->delete();
 
@@ -78,7 +107,7 @@ class UserController extends Controller
                 $filename = date('Y-m-d-H-i-s') . '-' . uniqid() . '.' . $ext;
                 // 使用我们新建的uploads本地存储空间（目录）
                 //dd(explode("/",Auth::user()->user_photo)[2]);
-                Storage::disk('public')->delete(explode("/",Auth::user()->user_photo)[2]);
+                //Storage::disk('public')->delete(explode("/",Auth::user()->user_photo)[2]);
                 Storage::disk('public')->put($filename, file_get_contents($realPath));
                 Auth::user()->user_photo = "/storage/".$filename;
                 Auth::user()->save();

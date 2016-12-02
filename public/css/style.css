@@ -1130,7 +1130,7 @@ img.zoom-img:hover {
 	-moz-transform: scale(1.05);
 	-o-transform: scale(1.08);
 	-ms-transform: scale(1.08);
-	-webkit-transition-timing-function: ease-in-out;
+	-webkit-transition-timing-function: ease-in-out; /* safari */
 	-moz-transition-timing-function: ease-in-out;
 	-o-transition-timing-function: ease-in-out;
 	-ms-transition-timing-function: ease-in-out;
@@ -2097,6 +2097,13 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
 	  background-size: cover;
 	}
 }
+
+ul.Sprites{ margin:0 auto; border:1px solid #F00; width:300px; padding:10px;}
+ul.Sprites li{ height:24px; font-size:14px;line-height:24px; text-align:left; overflow:hidden}
+ul.Sprites li span{ float:left; width:17px;padding-top:5px;height:17px;
+	overflow:hidden;background(../images/banner.jpg) no-repeat}
+ul.Sprites li a{ padding-left:5px}
+
 @media (max-width:320px){
 	.glb {
 	  width: 106px;
