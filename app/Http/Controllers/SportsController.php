@@ -125,6 +125,7 @@ class SportsController extends Controller
             $firstweighttime = "0";
             $lastweighttime = "0";
         }else {
+            $weightaverage = round($weightcount/$weightday,3);
             $firstweighttime = $weightrecords[0]->created_at;
             $lastweighttime = $weightrecords[$weightday - 1]->created_at;
         }
