@@ -11,7 +11,8 @@
     <title>{{ config('app.name', 'iSports') }}</title>
 
     <!-- Styles -->
-<link href="/css/my.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/css/site.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/my.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/flexy-menu.css" rel="stylesheet" type="text/css" media="all" />
@@ -42,7 +43,9 @@ require(['jquery'],function($){
 <script type="text/javascript">
 require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu({speed: 600,type: "horizontal",align: "left"});});
 </script>
+<style>
 
+</style>
 </head>
 <body>
 <!-- banner -->
@@ -52,27 +55,33 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                 <div class="banner-nav">
                         <ul class="flexy-menu orange nav1">
                             <li @if (Request::is('home')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{ url('/home') }}">Home</a></li>
-                            <li @if (Request::is('sports*')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="#">Sports</a>
+                            <li @if (Request::is('sports*')) class="hvr-sweep-to-bottom" @else class="hvr-sweep-to-bottom" @endif  ><a href="#" @if (Request::is('sports*')) style="text-decoration: none;background-color: #FEC514; color: #fff;" @endif  >Sports</a>
                                 <ul>
-                                     <li><a href="{{ url('/sports/sportsmanagement') }}">Sports Management</a></li>
-                                    <li><a href="{{ url('/sports/bodymanagement') }}">Body Management</a></li>
-                                    <li><a href="{{ url('/sports/sleepanalysis') }}">Sleep Analysis</a></li>
-                                    <li><a href="{{ url('/sports/sportsdata') }}">Sports Data</a></li>
+                                     <li><a href="{{ url('/sports/sportsmanagement') }}" @if (Request::is('sports/sportsmanagement')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>Sports Management</a></li>
+                                    <li><a href="{{ url('/sports/bodymanagement') }}"  @if (Request::is('sports/bodymanagement')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>Body Management</a></li>
+                                    <li><a href="{{ url('/sports/sleepanalysis') }}"  @if (Request::is('sports/sleepanalysis')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>Sleep Analysis</a></li>
+                                    <li><a href="{{ url('/sports/finalanalysis') }}"  @if (Request::is('sports/finalanalysis')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>Sports Data</a></li>
                                 </ul>
                             </li>
 
-                            <li class="hvr-sweep-to-bottom"><a href="#">Competition</a>
+                            <li class="hvr-sweep-to-bottom"><a href="#" @if (Request::is('competition*')) style="text-decoration: none;background-color: #FEC514; color: #fff;" @endif>Competition</a>
                                 <ul>
-                                    
-                                    <li><a href="#">Hippodrome</a>
+
+                                    <li><a href="#" @if (Request::is('competition/singlecompetition') || Request::is('competition/groupcompetition') || Request::is('competition/targetcompetition')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>Hippodrome</a>
                                         <ul>
-                                            <li @if (Request::is('competition/singlecompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/singlecompetition')}}">Single Competition</a></li>
-                                            <li @if (Request::is('competition/groupcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/groupcompetition')}}">Group Competition</a></li>
-                                            <li @if (Request::is('competition/targetcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/targetcompetition')}}">Target Competition</a></li>
+                                            <li>
+                                                <a href="{{url('/competition/singlecompetition')}}" @if (Request::is('competition/singlecompetition')) style="text-decoration: none;background-color: #feda4b; color: #fff;" @endif>Single Competition</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{url('/competition/groupcompetition')}}" @if (Request::is('competition/groupcompetition')) style="text-decoration: none;background-color: #feda4b; color: #fff;" @endif>Group Competition</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{url('/competition/targetcompetition')}}" @if (Request::is('competition/targetcompetition')) style="text-decoration: none;background-color: #feda4b; color: #fff;" @endif>Target Competition</a>
+                                            </li>
                                         </ul>
                                     </li>
-                                    <li @if (Request::is('competition/launchcompetition')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/competition/launchcompetition')}}">Launch Competition</a></li>
-                                    <li><a href="{{url('/competition/mycompetition')}}">My Competition</a></li>
+                                    <li ><a href="{{url('/competition/launchcompetition')}}"  @if (Request::is('competition/launchcompetition')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>Launch Competition</a></li>
+                                    <li><a href="{{url('/competition/mycompetition')}}" @if (Request::is('competition/mycompetition')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>My Competition</a></li>
                                 </ul>
                             </li>
                             <li @if (Request::is('moments')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif><a href="{{url('/moments')}}">Moments</a></li>
@@ -83,22 +92,17 @@ require(['jquery','flexymenu'],function($,felxymenu){$(".flexy-menu").flexymenu(
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
                             <li @if (Request::is('profile*')) class="hvr-sweep-to-bottom cap" @else class="hvr-sweep-to-bottom" @endif>
-                                <a href="#">
+                                <a href="#" @if (Request::is('user*')) style="text-decoration: none;background-color: #FEC514; color: #fff;" @endif>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <ul>
                                     <li>
-                                        <a href={{ url('user/usermanagement') }}>
+                                        <a href="{{ url('user/usermanagement') }}" @if (Request::is('user/usermanagement')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>
                                             User Management
                                         </a>   
                                     </li>
                                     <li>
-                                        <a href={{ url('user/friendmanagement') }}>
-                                            Friends Management
-                                        </a>   
-                                    </li>
-                                    <li>
-                                        <a href={{ url('user/launchmoments') }}>
+                                        <a href="{{ url('user/launchmoments') }}" @if (Request::is('user/launchmoments')) style="text-decoration: none;background-color: #fed537; color: #fff;" @endif>
                                             Launch My Moments
                                         </a>
                                     </li>

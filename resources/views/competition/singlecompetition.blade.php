@@ -13,7 +13,6 @@
 				$year = explode(" ",$competition->endtime)[0];
 				$month = explode(" ",$competition->endtime)[1];
 				$day = explode(" ",$competition->endtime)[2];
-
 				?>
 			<div class="col-md-6 news-grid">
 				<div class="col-md-6 news-grd">
@@ -21,10 +20,8 @@
 				</div>
 				<div class="col-md-6 news-grd-right">
 					<h4><a href="/competition/singlecompetition/{{$competition->id}}">{{ $competition->name }}</a></h4>
-					<h4>Type :{{ $competition->comType }}</h4>
-					<h4 style="color:red">Limit:{{ $competition->limit_exp }} exp</h4>
-					<h4 style="color:blue">Money:{{ $competition->money }} ￥</h4>
-					<h4>Reword:{{ $competition->total }} ￥</h4>
+					<h4>Type&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;{{ $competition->comType }}</h4>
+					<h4>Reword:&nbsp;{{ $competition->total }} ￥</h4>
 					<p>
 						{{ str_limit($competition->description) }}
 					</p>

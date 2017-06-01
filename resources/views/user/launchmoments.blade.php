@@ -12,7 +12,10 @@
 
                         <form id="pic" role="form" method="POST" enctype="multipart/form-data" action={{ url('moments/launchmoment') }}>
                             <label for="file" class="col-md-5" style="font-size:25px;" required>EXTRA PHOTO:</label>
-                            <input type="file" class="col-md-2" id="file" name="picture">
+                            <a href="javascript:;" class="file col-md-7"> File    Select
+                                <input type="file" name="picture" id="file" >
+                            </a>
+                            <div class="clearfix"></div>
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="text" value="Moments Name" name="moName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Moments Name';}"/>
                             <textarea value="Moments Content:" name="moContent">Moments Content</textarea>
@@ -30,27 +33,33 @@
     <br />
     <!-- //news -->
     <style>
-        #pic input[type="file"]{
-            position: relative;
-            display: inline-block;
-            background: #FEC514;
-            border: none;
-            border-radius: 4px;
-            margin: 10px 2px 10px 0px;
-            padding: 15px 0px;
+        .file {
 
+            border: none;
+            outline: none;
             color: #fff;
-            text-decoration: none;
-            text-indent: 0;
-            font-size: 18px;
+            background: #FEC514;
             width: 49%;
+            padding: 15px 0px;
+            font-size: 18px;
+            margin: 10px 2px 0px 0px;
             -webkit-appearance: none;
             border-radius: 0.3em;
             -webkit-border-radius: 0.3em;
             -moz-border-radius: 0.3em;
             -o-border-radius: 0.3em;
             -ms-border-radius: 0.3em;
-            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+
+        }
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            text-align: center;
         }
 
     </style>

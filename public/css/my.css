@@ -5,6 +5,15 @@
 	font-size:20px;
 }	
 
+
+.flexy-menu>li>
+
 .competition-group {
 	margin: 0,0,0,17px;
+}
+
+.banner-nav ul li.cap ul li a{
+	text-decoration: none;
+	background-color: white;
+	color: black;
 }

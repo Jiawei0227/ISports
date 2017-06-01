@@ -6,9 +6,15 @@
                 <h3>Profile</h3>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="oldpic" class="col-md-3 control-label" style="font-size: 20px;">HEAD PHOTO:</label>
+                                <div class="col-md-7">
+                                    <img id="oldpic" src="{{ url(Auth::user()->user_photo) }}" alt=" " width="200" height="200"/>
+                                </div>
+                            </div>
                         <div class="about-textarea contact-textarea">
 
-                            <label for="email" class="col-md-3">E-MAIL Address:</label>
+                            <label for="email" class="col-md-3">E-MAIL:</label>
                             <p id="email" class="col-md-7">{{ Auth::user()->email }}</p>
 
                             <label for="money" class="col-md-3">MY WEALTH:</label>
@@ -45,28 +51,24 @@
                                     @endif
                                 </div>
                             </div>
-                                <input style="width:80%;" type="submit" value="SUBMITCHANGE">
+
+                                <div class="form-group">
+                                <form id="pic" method="post" enctype="multipart/form-data" action={{ url('user/userphoto') }}>
+                                    {{ csrf_field() }}
+                                        <a href="javascript:;" class="file col-md-7"> File    Select
+                                            <input type="file" name="picture" id="file" >
+                                        </a>
+                                        <input type="submit" value="SUBMITPHOTO" style="float:left">
+                                </form>
+                                </div>
+
+
+                                <input style="width:98%;" type="submit" value="SUBMITCHANGE">
                             </form>
                             <br />
 
                             <br />
-                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label for="oldpic" class="col-md-3 control-label">HEAD PHOTO NOW:</label>
-                                <div class="col-md-7">
-                                    <img id="oldpic" src="{{ url(Auth::user()->user_photo) }}" alt=" " width="200" height="200"/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <form id="pic" method="post" enctype="multipart/form-data" action={{ url('user/userphoto') }}>
-                                    {{ csrf_field() }}
-                                    <label for="file" class="col-md-3 control-label">HEAD PHOTO:</label>
-                                    <div class="col-md-7">
-                                    <input type="file" id="file" name="picture">
-                                    <input type="submit" value="SUBMITPHOTO">
-                                        </div>
-                                </form>
-                            </div>
+                        
                         </div>
 
 
@@ -79,28 +81,43 @@
     </div>
 
     <style>
-        #pic input[type="file"]{
-            position: relative;
-            display: inline-block;
-            background: #FEC514;
+        .file {
+            position:relative;
             border: none;
-            border-radius: 4px;
-            margin: 10px 2px 0px 0px;
-            padding: 15px 0px;
-
+            outline: none;
             color: #fff;
-            text-decoration: none;
-            text-indent: 0;
-            font-size: 18px;
+            background: #FEC514;
             width: 49%;
+            padding: 15px 0px;
+            font-size: 18px;
+            margin: 10px 2px 0px 0px;
             -webkit-appearance: none;
             border-radius: 0.3em;
             -webkit-border-radius: 0.3em;
             -moz-border-radius: 0.3em;
             -o-border-radius: 0.3em;
             -ms-border-radius: 0.3em;
-            cursor: pointer;
+            overflow: hidden;
+            text-align: center;
+            float:left;
+
         }
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .file:hover {
+            background:#527994;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+            -o-transition: 0.5s all;
+        }
+
 
     </style>
 @endsection

@@ -4,19 +4,20 @@
 <br />
 <div class="container">
 	<div class="row">
-	<div id="container" style="width:1100px; height:600px"></div>
-	</div>
+    </div>
 	<br />
 	<br />
 	<div class="row contact-main">
+        <div id="container" style="height:550px" class="col-md-6"></div>
+
 		<div class="col-md-6">
-			<div class="about-textarea">
+			<div class="about-textarea" style="text-align: left">
 				<h3>Description</h3>
 				<h4 align="center">Here are some descriptions for your sleep recently.</h4>
-				<label for="intro" class="col-md-3">DSCRIBTION:</label>
-				<p id="intro" class="col-md-7">According to the chart showing below, it's easy to say that you have been sleep very well. Please Keep it.</p>
-				<label for="state" class="col-md-3">STATEMENT:</label>
-				<p id="techni" class="col-md-7">All resources in the station are for learning and reference only, do not use for commercial purposes, otherwise all the consequences will be borne by you!</p>
+				<label for="intro" class="col-md-2" style="font-size: small; margin-top: 5px">DSCRIBTION:</label>
+				<p id="intro" class="col-md-10" style="font-size: 16px">According to the chart showing below, it's easy to say that you have been sleep very well. Please Keep it.</p>
+				<label for="state" class="col-md-2" style="font-size: small; margin-top: 5px">STATEMENT:</label>
+				<p id="techni" class="col-md-10" style="font-size: 16px">All resources in the station are for learning and reference only, do not use for commercial purposes, otherwise all the consequences will be borne by you!</p>
 			</div>
 		</div>
 		<div class="col-md-6">

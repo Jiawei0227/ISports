@@ -14,7 +14,6 @@
                 <p>Last  Run day : {{ $lastruntime }}</p>
                 <p>Running average per day: {{ $runaverage }} km</p>
                 <p>Total Running distance: {{ $runtotal }} km</p>
-
             </div>
             <div class="col-md-3 banner-bottom-grid">
                 <a href={{ url('sports/walkingmanagement') }}><img src="/images/4.jpg" alt=" " /></a>
@@ -29,15 +28,11 @@
             <div class="col-md-3 banner-bottom-grid">
                 <a href={{ url('sports/bodymanagement') }}><img src="/images/5.jpg" alt=" " /></a>
                 <h4><a href={{ url('sports/bodymanagement') }}>Body</a></h4>
-                <p>Weight day : {{ $weightday }} day</p>
                 <p>Blood Pressure day : {{ $bloodday }} day</p>
                 <p>First Weight day : {{ $firstweight }}</p>
                 <p>Last  Weight day : {{ $lastweight }}</p>
-                <p>First Blood Pressure day : {{ $firstblood }}</p>
-                <p>Last  Blood Pressure day : {{ $lastblood }}</p>
-                <p>Weight average: {{ $weightaverage }} KG</p>
-                <p>HighBlood Pressure average: {{ $highblood_avg }} mmHg</p>
-                <p>LowBlood  Pressure average: {{ $lowblood_avg }} mmHg</p>
+                <p>HighBlood average: {{ $highblood_avg }} mmHg</p>
+                <p>LowBlood  average: {{ $lowblood_avg }} mmHg</p>
 
             </div>
             <div class="col-md-3 banner-bottom-grid">

@@ -4,18 +4,27 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        	<div id="weightandheight" style="width:1100px;height:600px;"></div>
-            <div class="row contact-main">
+            <div class="row contact-main" style="margin-top: 24px;">
+                <div id="weightandheight" class="col-md-6" style="height:400px;"></div>
                 <div class="col-md-6">
                     <div class="about-textarea">
                         <h3>Description</h3>
                         <h4 align="center">Here are some descriptions for your Weight recently.</h4>
-                        <label for="intro" class="col-md-3">DSCRIBTION:</label>
-                        <p id="intro" class="col-md-7">Accoroding to the chart show below, you are getting more and more heavy!Please keep sports and do more exercise!</p>
-                        <label for="state" class="col-md-3">STATEMENT:</label>
-                        <p id="techni" class="col-md-7">All resources in the station are for learning and reference only, do not use for commercial purposes, otherwise all the consequences will be borne by you!</p>
+                        <div class="list-group">
+                            <div>
+                                <label for="intro" class="col-md-2" style="font-size: small; margin-top: 5px">DSCRIBTION:</label>
+                                <p id="intro" class="col-md-10" style="font-size: 16px">Accoroding to the chart show below, you are getting more and more heavy!Please keep sports and do more exercise!</p>
+                            </div>
+                            <hr/>
+                            <div>
+                                <label for="state" class="col-md-2" style="font-size: small; margin-top: 5px">STATEMENT:</label>
+                                <p id="techni" class="col-md-10" style="font-size: 16px">All resources in the station are for learning and reference only, do not use for commercial purposes, otherwise all the consequences will be borne by you!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
                 <div class="col-md-6">
                     <div class="contact-textarea">
                         <form method="POST"  action={{ url('sports/weightdata') }}>
@@ -28,19 +37,20 @@
                         </form>
                     </div>
                 </div>
+                <div id="bloodpressure" class="col-md-6" style="height:400px;"></div>
             </div>
         </div>
 		<div class="col-md-12">
-        	<div id="bloodpressure" style="width:1100px;height:400px;"></div>
+
             <div class="row contact-main">
                 <div class="col-md-6">
                     <div class="about-textarea">
                         <h3>Description</h3>
                         <h4 align="center">Here are some descriptions for your Bloodpressure recently.</h4>
-                        <label for="intro" class="col-md-3">DSCRIBTION:</label>
-                        <p id="intro" class="col-md-7">Accoroding to the chart show below, your boold pressure is getting higher.It's dangerous!Please do more exercise and try to keep in good health!</p>
-                        <label for="state" class="col-md-3">STATEMENT:</label>
-                        <p id="techni" class="col-md-7">All resources in the station are for learning and reference only, do not use for commercial purposes, otherwise all the consequences will be borne by you!</p>
+                        <label for="intro" class="col-md-2" style="font-size: small; margin-top: 5px">DSCRIBTION:</label>
+                        <p id="intro" class="col-md-10" style="font-size: 16px">Accoroding to the chart show below, your boold pressure is getting higher.It's dangerous!Please do more exercise and try to keep in good health!</p>
+                        <label for="state" class="col-md-2" style="font-size: small; margin-top: 5px">STATEMENT:</label>
+                        <p id="techni" class="col-md-10" style="font-size: 16px">All resources in the station are for learning and reference only, do not use for commercial purposes, otherwise all the consequences will be borne by you!</p>
                     </div>
                 </div>
                 <div class="col-md-6">

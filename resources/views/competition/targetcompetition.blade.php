@@ -20,13 +20,38 @@
                             <p>{{ $day }}<span>{{$month}}</span>{{$year}}</p>
                         </div>
                         <div class="col-md-6 news-grd-right">
-                            <h4><a href="/competition/singlecompetition/{{$competition->id}}">{{ $competition->name }}</a></h4>
-                            <h4>Type :{{ $competition->comType }}</h4>
-                            <h4>Money:{{ $competition->money }} ￥</h4>
-                            <h4>Reword:{{ $competition->total }} ￥</h4>
-                            <p>
-                                {{ str_limit($competition->description) }}
-                            </p>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <h2><a href="/competition/singlecompetition/{{$competition->id}}">{{ $competition->name }}</a></h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-3">
+                                    <h4>Type</h4>
+                                    <h4>Money</h4>
+                                    <h4>Reword</h4>
+                                </div>
+                                <div class="col-md-1">
+                                    <h4>:</h4>
+                                    <h4>:</h4>
+                                    <h4>:</h4>
+                                </div>
+                                <div class="col-md-4">
+                                    <h4>{{ $competition->comType }}</h4>
+                                    <h4>{{ $competition->money }}￥</h4>
+                                    <h4>{{ $competition->total }}￥</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10">
+                                    <p>
+                                        {{ str_limit($competition->description) }}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="clearfix"> </div>
                         <br />

@@ -4,13 +4,14 @@
     <br />
     <div class="container">
         <div class="row">
-            <div id="container" style="width:1100px; height:600px"></div>
         </div>
         <br />
         <br />
         <div class="row contact-main">
+            <div id="container" style="height:550px" class="col-md-6"></div>
+            
             <div class="col-md-6">
-                <div class="about-textarea">
+                <div class="about-textarea" style="text-align: left">
                     <h3>Description</h3>
                     <h4 align="center">Here are some descriptions for your walk recently.</h4>
                     <label for="intro" class="col-md-3">DSCRIBTION:</label>
